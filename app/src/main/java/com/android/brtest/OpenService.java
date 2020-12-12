@@ -7,7 +7,7 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-public class MyService extends Service {
+public class OpenService extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
@@ -17,6 +17,6 @@ public class MyService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.e("service","系统开机，服务已启动");
+        Log.e("OpenService","系统开机，服务已启动");
     }
 }

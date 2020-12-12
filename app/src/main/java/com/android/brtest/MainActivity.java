@@ -20,20 +20,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * 发送广播
      */
     private Button mBtnSend;
-    private MyReceiver myReceiver;
+    private BatteryReceiver myReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
-        myReceiver = new MyReceiver();
+        myReceiver = new BatteryReceiver();
         IntentFilter intentFilter = new IntentFilter("con.android.brtest.receiver");
         intentFilter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION);
         registerReceiver(myReceiver, intentFilter);
-        IntentFilter intentFilter1 = new IntentFilter();
-        intentFilter1.addAction(Intent.ACTION_BOOT_COMPLETED);
-        this.registerReceiver(new MyServiceReceiver(), intentFilter);
+
     }
 
     @Override
